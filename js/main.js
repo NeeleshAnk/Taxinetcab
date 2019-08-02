@@ -14,7 +14,7 @@ window.onscroll = function() {myFunction()};
 var header = document.getElementById('header');
 
 function myFunction() {
-  if (window.pageYOffset > 50) {
+  if (window.pageYOffset > 80) {
     header.classList.add("header-border-scroll");
   } else {
     header.classList.remove("header-border-scroll");

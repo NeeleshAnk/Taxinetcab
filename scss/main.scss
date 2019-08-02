@@ -6,6 +6,14 @@ body{
   margin: 0;
   font-family: 'Ubuntu';
 }
+h1, h2, h3, h4, h5, p, button {
+  color: #777777;
+  font-family: 'Ubuntu';
+}
+p {
+  font-size: 1.3em;
+  font-weight: 300;
+}
 a, span, a:hover, span:hover {
   color: inherit;
   text-decoration: none !important;
@@ -19,9 +27,11 @@ header{
   -moz-transition: all 1s;
   transition: all .1s;
 }
+// add class while header scroll
 .header-border-scroll{
   border-bottom: solid 3px $saffron-yellow !important;
 }
+// open hidden menu overlay on click menu btn
 .sidenav {
   height: 100%;
   width: 100%;
@@ -33,6 +43,24 @@ header{
 }
 .sidenav_open{
   @include transform(rotate(0deg));
+}
+
+#menu-btn, #close-btn{
+  line-height: 30px;
+  font-size: 1.5em;
+  @include relative(z-index 1001);
+  height: 30px;
+  transition: all 0.5s !important;
+  display: inline-block;
+}
+#close-btn{
+  font-size: 2.5rem;
+  display: none;
+}
+.sidenav .closebtn {
+  @include absolute(top 0 right 25px);
+  @include fontSize(36);
+  margin-left: 50px;
 }
 .inner_links{
   @include absolute(top 120px);
@@ -50,24 +78,7 @@ header{
   transition: 0.3s;
 }
 
-.sidenav .closebtn {
-  @include absolute(top 0 right 25px);
-  @include fontSize(36);
-  margin-left: 50px;
-}
-
-#menu-btn, #close-btn{
-  line-height: 30px;
-  font-size: 1.5em;
-  @include relative(z-index 1001);
-  height: 30px;
-  transition: all 0.5s !important;
-  display: inline-block;
-}
-#close-btn{
-  font-size: 2.5rem;
-  display: none;
-}
+// header links
 #link-menu{
   float: right;
   margin: 0;
@@ -138,4 +149,130 @@ header{
       transform-origin: 100% 50%;
     }
   }
+}
+// skewed-section
+.skewed-section{
+  position: relative;
+  margin: 100px 0px 35px 0px;
+}
+#content_wrapper {
+  margin-top: 20px;
+  padding: 0 15px;
+}
+// banner ribbon
+.ribbon-block{
+  width: 100vw;
+  height: 650px;
+}
+.ribbon{
+  background: $yellow-color;
+  @include transform(rotate(-12deg));
+}
+.ribbon_one{
+  width: 400px;
+  height: 160px;
+  @include relative(top 10.5% left 46.6%);
+  z-index: 1;
+  p{
+    @include fontSize(45);
+    @include absolute(top 29% left 13%);
+    font-weight: normal;
+    color: $light_black;
+    font-style: italic;
+  }
+}
+.ribbon_two{
+  width: 65%;
+  @include relative(top -5% left -50px);
+  height: 100px;
+}
+.ribbon_three{
+  @include absolute(left 39.8% top 10.5%);
+  border-left: 69px solid $yellow-color;
+  border-right: 198px solid $golden_yellow;
+  border-top: 30px solid $yellow-color;
+}
+.ribbon_four{
+  @include absolute(left 67.8% top 30.5% z-index 1);
+  border-top: 52px solid $golden_yellow;
+  border-right: 93px solid $yellow-color;
+  border-left: 52px solid $golden_yellow;
+  border-bottom: 30px solid $yellow-color;
+}
+.ribbon_five{
+  width: 423px;
+  height: 100px;
+  @include relative(top -110px left 68%);
+}
+// mobile image on banner
+.mobile-image {
+  @include absolute(left 17% z-index 1);
+}
+.intro-text {
+  @include absolute(right 29% bottom 13%);
+  p{
+    font-weight: bold;
+  }
+}
+// app downloading button on banner
+.app_btn{
+  @include absolute(right 30% bottom 5%);
+  a{
+    background: $yellow-color;
+    padding: 8px;
+    width: 145px;
+    overflow: hidden;
+    @include relative(z-index 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    text-align: center;
+    display: inline-block;
+    transition: border-color 0.3s, color 0.3s;
+    border: 1.5px solid $yellow-color;
+    font-size: 0.925em;
+    font-weight: 500;
+    border-radius: 25px;
+    &:after{
+      content: '';
+      @include absolute(top 0 left 0 z-index -1);
+      width: 150%;
+      background: $snow_white !important;
+      height: 100%;
+      -webkit-transform-origin: 0% 100%;
+      transform-origin: 0% 100%;
+      @include transform(rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0));
+      -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+      transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+    }
+    &:hover{
+      &:after{
+        opacity: 1;
+        @include transform(rotate3d(0, 0, 1, 0deg));
+        -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+    }
+  }
+  a:nth-child(1){
+    &:before{
+      content: '\f179';
+      font-family: 'Font Awesome\ 5 Brands';
+      margin-right: 5px;
+    }
+
+  }
+  a:nth-child(2){
+    &:before{
+      content: "\f17b";
+      font-family: 'Font Awesome\ 5 Brands';
+      margin-right: 5px;
+    }
+  }
+}
+// banner background
+.background{
+  @include absolute(top -118px left 0 z-index -1);
+  background: $white-shade;
+  @include transform(skewY(-5deg));
+  width: 100%;
+  height: 139%;
 }

@@ -245,7 +245,7 @@ header{
     }
     &:hover{
       &:after{
-        opacity: 1;
+        @include opacity(1);
         @include transform(rotate3d(0, 0, 1, 0deg));
         -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
         transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -268,11 +268,92 @@ header{
     }
   }
 }
+// scroll down moving angle on banner bottom
+.down-angle{
+  @include absolute(bottom -100px left 50%);
+  color: $saffron-yellow;
+  @include fontSize(60);
+  @include animation(move, 0s, 2s);
+  animation-iteration-count: infinite;
+}
+@include keyframes(move){
+  0%{
+    bottom: -100px;
+  }
+  50%{
+    bottom: -125px;
+  }
+  100%{
+    bottom: -100px;
+  }
+};
 // banner background
 .background{
   @include absolute(top -118px left 0 z-index -1);
   background: $white-shade;
   @include transform(skewY(-5deg));
   width: 100%;
-  height: 139%;
+  height: 142%;
+}
+// section-padding
+.section-padding {
+  padding: 80px 0px;
+}
+// circular-icons
+#circular-icons{
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  width: 100%;
+  .background{
+    @include linear-gradient(to bottom, #f7bf07 0%,#ffe600 100%);
+    top: 20px;
+    height: 100%;
+  }
+  .icon-box{
+    margin: 15% 0 10%;
+  }
+  .icon{
+    margin-bottom: 40px;
+  }
+  .circle{
+    position: relative;
+    background-color: $white;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 15px 15px;
+    color: $golden_yellow;
+    @include fontSize(75);
+    @include flex($display:flex, $justify-content:center);
+    @include flex-direction(column);
+  }
+}
+// shadow below circular icons
+.shadow{
+  width: 40px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: $light_yellow;
+  bottom: -15px;
+  @include absolute(left 50%);
+  margin-left: -20px;
+}
+// bottom-text below circular icons
+.text{
+  width: 100px;
+  font-size: 1.1em;
+  margin: 0 auto;
+  padding-left: 20px;
+  position: relative;
+  color: $Dark-gray;
+  .left-bar{
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background-color: $white;
+    @include absolute(top 0 left 0);
+  }
 }

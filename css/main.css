@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: 'Ubuntu'; }
 
+html {
+  scroll-behavior: smooth; }
+
 h1, h2, h3, h4, h5, p, button {
   color: #777777;
   font-family: 'Ubuntu'; }
@@ -63,7 +66,6 @@ header {
   display: inline-block; }
 
 #close-btn {
-  font-size: 2.5rem;
   display: none; }
 
 .sidenav .closebtn {
@@ -528,5 +530,28 @@ header {
   background: linear-gradient(90deg, #d3d3d3 40%, rgba(255, 255, 255, 0) 0%);
   background-size: 19px 3px;
   background-repeat: repeat-x; }
+
+#quote-dialog {
+  position: relative;
+  width: 100%;
+  text-align: center; }
+  #quote-dialog h2 {
+    font-size: 2.7em;
+    margin: 1.2em 0; }
+  #quote-dialog .inner-wrapper {
+    margin: 150px 0;
+    overflow: hidden; }
+
+.bd-img {
+  background-image: url("../image/bkg-gris-2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.bd-img.background {
+  top: -50px;
+  left: -178px;
+  height: 105%;
+  width: 170%; }
 
 /*# sourceMappingURL=main.css.map */

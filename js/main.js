@@ -20,3 +20,6 @@ function myFunction() {
     header.classList.remove("header-border-scroll");
   }
 }
+function scrollwin() {
+   window.scrollBy(0, 600);
+}

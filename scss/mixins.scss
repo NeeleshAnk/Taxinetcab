@@ -460,7 +460,7 @@ $path: "../images/mixology";
 // ==========================================================
 // mixin global background-image
 // ==========================================================
-$global-path: "../images";
+$global-path: "../image";
 
 @mixin global-bg-image($img, $background-position, $background-size) {
   background-image: url('#{$global-path}/#{$img}');

@@ -1,11 +1,11 @@
 function openNav() {
   document.getElementById("menu-btn").style.display = "none";
-  document.getElementById("close-btn").style.display = "inline-block";
+  document.getElementById("close-btn").style.display = "initial";
   document.getElementById("mySidenav").classList.add("sidenav_open");
 }
 
 function closeNav() {
-  document.getElementById("menu-btn").style.display = "inline-block";
+  document.getElementById("menu-btn").style.display = "initial";
   document.getElementById("close-btn").style.display = "none";
   document.getElementById("mySidenav").classList.remove("sidenav_open");
 }
@@ -19,4 +19,7 @@ function myFunction() {
   } else {
     header.classList.remove("header-border-scroll");
   }
+}
+function scrollwin() {
+   window.scrollBy(0, 600);
 }

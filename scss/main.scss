@@ -487,8 +487,8 @@ header{
     @include transform(rotate(-5deg));
   }
   &:before{
-    bottom: 70%;
-    right: 30px;
+    top: 30%;
+    right: 0;
   }
   &:after{
     top: 18%;
@@ -553,7 +553,6 @@ header{
     padding: 0 15px;
     margin: 10% 0;
     width: 100%;
-    padding-right: 45px;
   }
   .background{
     width: 170%;
@@ -602,5 +601,101 @@ header{
     font-style: italic;
     color: $white;
     font-weight: 100;
+  }
+}
+
+// viajar-con section
+#viajar-con{
+  width: 100%;
+  position: relative;
+  margin: 5% 0;
+  h2{
+    font-size: 1.5em;
+  }
+  .viajar-title{
+    text-align: right;
+    padding-right: 15px;
+    font-weight: 400;
+    margin: 20px auto;
+    position: relative;
+  }
+  h3{
+    font-size: 1.17em;
+  }
+  p{
+    color: $Dark-gray;
+    margin: 10px 0 0;
+    font-weight: 500;
+  }
+  .row h2, .row h3 {
+    color: $light-grey;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+.title-bar{
+  width: 3px;
+  height: 34px;
+  @include absolute(top 3px right 0);
+  background-color: $yellow-color;
+}
+
+// testimonials images with text
+#testimonials{
+  .background{
+    @include linear-gradient(top, #f7bf07 0%, #ffe600 100%);
+    top: -50px;
+    height: 110%;
+  }
+}
+.testimonials{
+  margin: 120px 0;
+  & > div{
+    padding: 0 30px;
+    &:after{
+      content: '';
+      display: block;
+      width: 30%;
+      height: 2px;
+      background-color: $white;
+    }
+  }
+  h3{
+    font-size: 1.25em;
+    color: $extra-dark-gray;
+    margin: 25px 0;
+  }
+  p{
+
+    font-style: italic;
+    font-size: 1.1em;
+    color: $extra-dark-gray;
+  }
+}
+.img{
+  position: relative;
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+  .activate-youtube{
+    padding: 5px 13px;
+    width: 50px;
+    height: 50px;
+    @include absolute(top 25px right 25px);
+    font-size: 1.5em;
+    color: $yellow-color;
+    border: 3px solid white;
+    @include border-radius(50%);
+    &:hover{
+      color: $yellow-color !important;
+    }
+  }
+}
+.stars{
+  span{
+    font-size: 2.8em;
+    display: inline-block;
+    color: $white;
   }
 }

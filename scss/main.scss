@@ -37,6 +37,7 @@ header{
 // open hidden menu overlay on click menu btn
 .sidenav {
   height: 100%;
+  @include opacity(0);
   width: 100%;
   @include fixed(top 0 left 0 z-index 1);
   transform-origin: bottom left;
@@ -556,8 +557,8 @@ header{
   }
   .background{
     width: 170%;
-    height: 105%;
-    top: -30px;
+    height: 118%;
+    top: -108px;
     left: -170px;
   }
 }

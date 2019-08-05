@@ -34,6 +34,8 @@ header {
 
 .sidenav {
   height: 100%;
+  opacity: 0;
+  filter: alpha(opacity=0);
   width: 100%;
   position: fixed;
   top: 0;
@@ -641,8 +643,8 @@ header {
     width: 100%; }
   #viajar-lines .background {
     width: 170%;
-    height: 105%;
-    top: -30px;
+    height: 118%;
+    top: -108px;
     left: -170px; }
 
 .content {

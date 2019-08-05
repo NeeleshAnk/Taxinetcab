@@ -239,47 +239,6 @@ header {
   position: absolute;
   right: 30%;
   bottom: 5%; }
-  .app_btn a {
-    background: #fad048;
-    padding: 8px;
-    width: 145px;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    text-align: center;
-    display: inline-block;
-    transition: border-color 0.3s, color 0.3s;
-    border: 1.5px solid #fad048;
-    font-size: 0.925em;
-    font-weight: 500;
-    border-radius: 25px; }
-    .app_btn a:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 150%;
-      background: #fafafa !important;
-      height: 100%;
-      -webkit-transform-origin: 0% 100%;
-      transform-origin: 0% 100%;
-      -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-      -moz-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-      -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-      transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-      -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
-      transition: transform 0.3s, opacity 0.3s, background-color 0.3s; }
-    .app_btn a:hover:after {
-      opacity: 1;
-      filter: alpha(opacity=100);
-      -webkit-transform: rotate3d(0, 0, 1, 0deg);
-      -moz-transform: rotate3d(0, 0, 1, 0deg);
-      -ms-transform: rotate3d(0, 0, 1, 0deg);
-      transform: rotate3d(0, 0, 1, 0deg);
-      -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
   .app_btn a:nth-child(1):before {
     content: '\f179';
     font-family: 'Font Awesome\ 5 Brands';
@@ -288,6 +247,48 @@ header {
     content: "\f17b";
     font-family: 'Font Awesome\ 5 Brands';
     margin-right: 5px; }
+
+.link-btn {
+  background: #fad048;
+  padding: 8px;
+  width: 145px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  text-align: center;
+  display: inline-block;
+  transition: border-color 0.3s, color 0.3s;
+  border: 1.5px solid #fad048;
+  font-size: 0.925em;
+  font-weight: 500;
+  border-radius: 30px; }
+  .link-btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 150%;
+    background: #fafafa !important;
+    height: 100%;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -moz-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s; }
+  .link-btn:hover:after {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    -moz-transform: rotate3d(0, 0, 1, 0deg);
+    -ms-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
 
 .down-angle {
   position: absolute;
@@ -553,5 +554,75 @@ header {
   left: -178px;
   height: 105%;
   width: 170%; }
+
+#viajar_click {
+  position: relative;
+  margin: 10% 0;
+  width: 100%;
+  text-align: center; }
+  #viajar_click:before, #viajar_click:after {
+    content: '';
+    width: 50%;
+    height: 4px;
+    position: absolute;
+    background-image: linear-gradient(90deg, #fad048 21%, rgba(255, 255, 255, 0) 0%);
+    background-size: 50px 4px;
+    background-repeat: repeat-x;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg); }
+  #viajar_click:before {
+    bottom: 70%;
+    right: 30px; }
+  #viajar_click:after {
+    top: 18%;
+    left: 0; }
+  #viajar_click i {
+    display: block;
+    text-align: center;
+    font-size: 2.3em;
+    color: #fad048;
+    margin-top: 15px; }
+  #viajar_click span {
+    display: inline-block;
+    font-size: 3.75rem;
+    line-height: 1.1em;
+    position: relative;
+    z-index: 1;
+    color: #fad048;
+    background: #fff;
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+    font-style: italic; }
+  #viajar_click .link-btn {
+    width: 200px;
+    font-size: 1.2em;
+    margin: 10px auto 0;
+    display: block;
+    padding: 10px 30px;
+    line-height: 1.2em;
+    background: #fff; }
+    #viajar_click .link-btn:after {
+      background: #fad048 !important; }
+    #viajar_click .link-btn:hover {
+      color: #fff; }
+  #viajar_click .app_btn {
+    bottom: -30%;
+    right: 38%;
+    transition: .8s;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+    #viajar_click .app_btn .link-btn {
+      display: inline-block;
+      padding: 8px;
+      width: 145px;
+      font-size: 0.925em;
+      margin-right: 10px; }
 
 /*# sourceMappingURL=main.css.map */

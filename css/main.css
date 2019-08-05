@@ -576,8 +576,8 @@ header {
     -ms-transform: rotate(-5deg);
     transform: rotate(-5deg); }
   #viajar_click:before {
-    bottom: 70%;
-    right: 30px; }
+    top: 30%;
+    right: 0; }
   #viajar_click:after {
     top: 18%;
     left: 0; }
@@ -638,8 +638,7 @@ header {
     text-align: right;
     padding: 0 15px;
     margin: 10% 0;
-    width: 100%;
-    padding-right: 45px; }
+    width: 100%; }
   #viajar-lines .background {
     width: 170%;
     height: 105%;
@@ -703,6 +702,8 @@ header {
   width: 100%;
   position: relative;
   margin: 5% 0; }
+  #viajar-con h2 {
+    font-size: 1.5em; }
   #viajar-con .viajar-title {
     text-align: right;
     padding-right: 15px;
@@ -715,6 +716,10 @@ header {
     color: #808080;
     margin: 10px 0 0;
     font-weight: 500; }
+  #viajar-con .row h2, #viajar-con .row h3 {
+    color: #b3b3b3;
+    margin: 0;
+    font-weight: 400; }
 
 .title-bar {
   width: 3px;
@@ -724,9 +729,58 @@ header {
   right: 0;
   background-color: #fad048; }
 
-.row h2, .row h3 {
-  color: #b3b3b3;
-  margin: 0;
-  font-weight: 400; }
+#testimonials .background {
+  background: -o-linear-gradient(top, #f7bf07 0%, #ffe600 100%);
+  background: -moz-linear-gradient(top, #f7bf07 0%, #ffe600 100%);
+  background: -webkit-linear-gradient(top, #f7bf07 0%, #ffe600 100%);
+  background: linear-gradient(top, #f7bf07 0%, #ffe600 100%);
+  top: -50px;
+  height: 110%; }
+
+.testimonials {
+  margin: 120px 0; }
+  .testimonials > div {
+    padding: 0 30px; }
+    .testimonials > div:after {
+      content: '';
+      display: block;
+      width: 30%;
+      height: 2px;
+      background-color: #fff; }
+  .testimonials h3 {
+    font-size: 1.25em;
+    color: #999;
+    margin: 25px 0; }
+  .testimonials p {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #999; }
+
+.img {
+  position: relative;
+  text-align: center; }
+  .img img {
+    max-width: 100%; }
+  .img .activate-youtube {
+    padding: 5px 13px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 1.5em;
+    color: #fad048;
+    border: 3px solid white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
+    .img .activate-youtube:hover {
+      color: #fad048 !important; }
+
+.stars span {
+  font-size: 2.8em;
+  display: inline-block;
+  color: #fff; }
 
 /*# sourceMappingURL=main.css.map */

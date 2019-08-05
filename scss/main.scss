@@ -540,3 +540,67 @@ header{
     }
   }
 }
+
+//viajar-lines section
+.lines-bd{
+  @include global-bg-image("index-viajar.jpg", center, cover);
+}
+#viajar-lines{
+  width: 100%;
+  padding: 0 15px;
+  .viajar-container {
+    text-align: right;
+    padding: 0 15px;
+    margin: 10% 0;
+    width: 100%;
+    padding-right: 45px;
+  }
+  .background{
+    width: 170%;
+    height: 105%;
+    top: -30px;
+    left: -170px;
+  }
+}
+.content{
+  display: inline-block;
+  width: 480px;
+  text-align: left;
+  h2{
+    @include relative(z-index 1);
+    margin: 0;
+    width: 100%;
+    max-width: 330px;
+    display: inline-block;
+    background-color: $white;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    @include transform(skew(-5deg) rotate(-5deg));
+    font-size: 2.6em;
+    padding: 20px;
+    border-left: 5px solid $yellow-color;
+  }
+}
+.article{
+  width: 85%;
+  @include relative(top -20px left 15px);
+  background-color: #d3d3d3;
+  @include transform(skew(-5deg) rotate(-5deg));
+  padding: 35px 35px 20px;
+  p{
+    @include transform(skew(5deg) rotate(5deg));
+    font-weight: 500;
+  }
+}
+.link{
+  @include absolute(bottom -31px right 0);
+  background-color: #666;
+  display: inline-block;
+  padding: 7px 21px;
+  a{
+    font-style: italic;
+    color: $white;
+    font-weight: 100;
+  }
+}

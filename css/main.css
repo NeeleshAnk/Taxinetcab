@@ -625,4 +625,78 @@ header {
       font-size: 0.925em;
       margin-right: 10px; }
 
+.lines-bd {
+  background-image: url("../image/index-viajar.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+#viajar-lines {
+  width: 100%;
+  padding: 0 15px; }
+  #viajar-lines .viajar-container {
+    text-align: right;
+    padding: 0 15px;
+    margin: 10% 0;
+    width: 100%;
+    padding-right: 45px; }
+  #viajar-lines .background {
+    width: 170%;
+    height: 105%;
+    top: -30px;
+    left: -170px; }
+
+.content {
+  display: inline-block;
+  width: 480px;
+  text-align: left; }
+  .content h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    max-width: 330px;
+    display: inline-block;
+    background-color: #fff;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    -webkit-transform: skew(-5deg) rotate(-5deg);
+    -moz-transform: skew(-5deg) rotate(-5deg);
+    -ms-transform: skew(-5deg) rotate(-5deg);
+    transform: skew(-5deg) rotate(-5deg);
+    font-size: 2.6em;
+    padding: 20px;
+    border-left: 5px solid #fad048; }
+
+.article {
+  width: 85%;
+  position: relative;
+  top: -20px;
+  left: 15px;
+  background-color: #d3d3d3;
+  -webkit-transform: skew(-5deg) rotate(-5deg);
+  -moz-transform: skew(-5deg) rotate(-5deg);
+  -ms-transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-5deg) rotate(-5deg);
+  padding: 35px 35px 20px; }
+  .article p {
+    -webkit-transform: skew(5deg) rotate(5deg);
+    -moz-transform: skew(5deg) rotate(5deg);
+    -ms-transform: skew(5deg) rotate(5deg);
+    transform: skew(5deg) rotate(5deg);
+    font-weight: 500; }
+
+.link {
+  position: absolute;
+  right: 0;
+  bottom: -31px;
+  background-color: #666;
+  display: inline-block;
+  padding: 7px 21px; }
+  .link a {
+    font-style: italic;
+    color: #fff;
+    font-weight: 100; }
+
 /*# sourceMappingURL=main.css.map */

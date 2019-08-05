@@ -219,41 +219,6 @@ header{
 // app downloading button on banner
 .app_btn{
   @include absolute(right 30% bottom 5%);
-  a{
-    background: $yellow-color;
-    padding: 8px;
-    width: 145px;
-    overflow: hidden;
-    @include relative(z-index 1);
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    text-align: center;
-    display: inline-block;
-    transition: border-color 0.3s, color 0.3s;
-    border: 1.5px solid $yellow-color;
-    font-size: 0.925em;
-    font-weight: 500;
-    border-radius: 25px;
-    &:after{
-      content: '';
-      @include absolute(top 0 left 0 z-index -1);
-      width: 150%;
-      background: $snow_white !important;
-      height: 100%;
-      -webkit-transform-origin: 0% 100%;
-      transform-origin: 0% 100%;
-      @include transform(rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0));
-      -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
-      transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
-    }
-    &:hover{
-      &:after{
-        @include opacity(1);
-        @include transform(rotate3d(0, 0, 1, 0deg));
-        -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-      }
-    }
-  }
   a:nth-child(1){
     &:before{
       content: '\f179';
@@ -270,6 +235,42 @@ header{
     }
   }
 }
+.link-btn{
+  background: $yellow-color;
+  padding: 8px;
+  width: 145px;
+  overflow: hidden;
+  @include relative(z-index 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  text-align: center;
+  display: inline-block;
+  transition: border-color 0.3s, color 0.3s;
+  border: 1.5px solid $yellow-color;
+  font-size: 0.925em;
+  font-weight: 500;
+  border-radius: 30px;
+  &:after{
+    content: '';
+    @include absolute(top 0 left 0 z-index -1);
+    width: 150%;
+    background: $snow_white !important;
+    height: 100%;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    @include transform(rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0));
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  }
+  &:hover{
+    &:after{
+      @include opacity(1);
+      @include transform(rotate3d(0, 0, 1, 0deg));
+      -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    }
+  }
+}
+
 // scroll down moving angle on banner bottom
 .down-angle{
   @include absolute(bottom -100px left 50%);
@@ -464,4 +465,78 @@ header{
   left: -178px;
   height: 105%;
   width: 170%;
+}
+
+// viajar_click section
+#viajar_click{
+  position: relative;
+  margin: 10% 0;
+  width: 100%;
+  text-align: center;
+  &:before, &:after{
+    content: '';
+    width: 50%;
+    height: 4px;
+    position: absolute;
+    background-image: linear-gradient(90deg, #fad048 21%, rgba(255,255,255,0) 0%);
+    background-size: 50px 4px;
+    background-repeat: repeat-x;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    @include transform(rotate(-5deg));
+  }
+  &:before{
+    bottom: 70%;
+    right: 30px;
+  }
+  &:after{
+    top: 18%;
+    left: 0;
+  }
+  i{
+    display: block;
+    text-align: center;
+    font-size: 2.3em;
+    color: $yellow-color;
+    margin-top: 15px;
+  }
+  span{
+    display: inline-block;
+    @include fontSize(60);
+    line-height: 1.1em;
+    @include relative(z-index 1);
+    color: $yellow-color;
+    background: $white;
+    @include transform(skewY(-5deg));
+    font-style: italic;
+  }
+  .link-btn{
+    width: 200px;
+    font-size: 1.2em;
+    margin: 10px auto 0;
+    display: block;
+    padding: 10px 30px;
+    line-height: 1.2em;
+    background: $white;
+    &:after{
+      background: $yellow-color !important;
+    }
+    &:hover{
+      color: $white;
+    }
+  }
+  .app_btn{
+    bottom: -30%;
+    right: 38%;
+    transition: .8s;
+    @include opacity(0);
+    .link-btn{
+      display: inline-block;
+      padding: 8px;
+      width: 145px;
+      font-size: 0.925em;
+      margin-right: 10px;
+    }
+  }
 }

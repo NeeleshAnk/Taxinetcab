@@ -23,3 +23,7 @@ function myFunction() {
 function scrollwin() {
    window.scrollBy(0, 600);
 }
+function show() {
+  var show = document.getElementById('link-btn');
+  show.style.opacity = 1;
+}

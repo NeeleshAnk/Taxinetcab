@@ -2,12 +2,14 @@ function openNav() {
   document.getElementById("menu-btn").style.display = "none";
   document.getElementById("close-btn").style.display = "initial";
   document.getElementById("mySidenav").classList.add("sidenav_open");
+  document.getElementById("mySidenav").style.opacity = 1;
 }
 
 function closeNav() {
   document.getElementById("menu-btn").style.display = "initial";
   document.getElementById("close-btn").style.display = "none";
   document.getElementById("mySidenav").classList.remove("sidenav_open");
+  document.getElementById("mySidenav").style.opacity = 0;
 }
 window.onscroll = function() {myFunction()};
 

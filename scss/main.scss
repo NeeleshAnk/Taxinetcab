@@ -604,3 +604,37 @@ header{
     font-weight: 100;
   }
 }
+
+// viajar-con section
+#viajar-con{
+  width: 100%;
+  position: relative;
+  margin: 5% 0;
+  .viajar-title{
+    text-align: right;
+    padding-right: 15px;
+    font-weight: 400;
+    margin: 20px auto;
+    position: relative;
+  }
+  h3{
+    font-size: 1.17em;
+  }
+  p{
+    color: $Dark-gray;
+    margin: 10px 0 0;
+    font-weight: 500;
+  }
+}
+.title-bar{
+  width: 3px;
+  height: 34px;
+  @include absolute(top 3px right 0);
+  background-color: $yellow-color;
+}
+
+.row h2, .row h3 {
+  color: $light-grey;
+  margin: 0;
+  font-weight: 400;
+}

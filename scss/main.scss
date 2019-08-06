@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, p, button {
 }
 p {
   font-size: 1.3em;
-  font-weight: 300;
+  font-weight: 500;
 }
 a, span, a:hover{
   color: inherit;
@@ -103,7 +103,7 @@ header{
       height: 100%;
       background-color: $yellow-color;
       transition: transform .1s;
-      transform: scale3d(1,0,1);
+      @include transform(scale3d(1,0,1));
     }
     &:before{
       bottom: 0;
@@ -415,7 +415,6 @@ header{
   width: 100% !important;
   p{
     font-size: 1.1em !important;
-    font-weight: 500;
   }
 }
 // step-count
@@ -590,7 +589,6 @@ header{
   padding: 35px 35px 20px;
   p{
     @include transform(skew(5deg) rotate(5deg));
-    font-weight: 500;
   }
 }
 .link{
@@ -626,7 +624,6 @@ header{
   p{
     color: $Dark-gray;
     margin: 10px 0 0;
-    font-weight: 500;
   }
   .row h2, .row h3 {
     color: $light-grey;
@@ -679,6 +676,7 @@ header{
   img{
     max-width: 100%;
   }
+  // youtube button on the image
   .activate-youtube{
     padding: 5px 13px;
     width: 50px;
@@ -693,10 +691,186 @@ header{
     }
   }
 }
+// stars below the image
 .stars{
   span{
     font-size: 2.8em;
     display: inline-block;
     color: $white;
+  }
+}
+
+// small ribbon in country-section
+.small-ribbon{
+  padding-bottom: 150px;
+}
+#country-precence{
+  .background{
+    background: $very-light-gray;
+  }
+}
+.ribbon-02{
+  position: relative;
+  top: 35px;
+  .part {
+    position: absolute;
+    &:nth-child(1) {
+      width: 110px;
+      height: 100px;
+      @include transform(skew(-5deg) rotate(-5deg));
+      background-color: $yellow-shadow;
+    }
+    &:nth-child(2) {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10.5px 55px 23px 0;
+      border-color: transparent $strong-orange transparent transparent;
+      top: 62px;
+      left: 55px;
+    }
+    &:nth-child(3) {
+      width: 340px;
+      height: 120px;
+      @include transform(skew(-5deg) rotate(-5deg));
+      background-color: $bright-orange;
+      left: 57px;
+      top: -63px;
+      h2{
+        width: 100%;
+        font-style: italic;
+        font-size: 2em;
+        display: inline-block;
+        padding-left: 60px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+// country name block
+.country-name{
+  p{
+    width: 60%;
+    line-height: 30px;
+    margin: 15% auto 40px;
+  }
+}
+.rounded-button{
+  .link-btn{
+    background: transparent;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    font-size: 1.2em;
+    &:after{
+      background: $yellow-color !important;
+    }
+    &:hover{
+      color: $white;
+    }
+  }
+}
+@media (max-width:768px){
+  .country-map{
+    order: 1;
+    left: 0;
+  }
+  .country-name{
+    order: 2;
+  }
+}
+// map image
+.country-map{
+  position: relative;
+  text-align: center;
+  left: -9%;
+  @media (min-width: 768px) {
+    margin-top: -100px;
+  }
+}
+#lugar{
+  cursor: pointer;
+}
+// location info while hover on the marker
+.location-info {
+  display: none;
+  background: $white;
+  text-align: left;
+  min-width: 175px;
+  padding: 10px 15px;
+  @include border(2px, solid, $yellow-color);
+  @include absolute(top -100% right 100% z-index 1);
+}
+// location marker on the map image
+.location-container{
+  display: inline-block;
+  position: absolute;
+  &:hover{
+    .location-info{
+      @media (min-width: 320px) {
+        display: block;
+      }
+      @media (max-width: 480px){
+        left: 100%;
+      }
+    }
+  }
+  top: 4%;
+  left: 41%;
+  &:nth-child(2){
+    top: 29%;
+    left: 49%;
+  }
+  &:nth-child(3){
+    left: 46%;
+    top: 54%;
+  }
+  &:nth-child(4){
+    left: 43%;
+    top: 52%;
+  }
+  &:nth-child(5){
+    left: 51%;
+    top: 70%;
+  }
+  &:nth-child(6){
+    left: 46.5%;
+    top: 70%;
+  }
+  &:nth-child(7){
+    left: 48%;
+    top: 58%;
+  }
+  &:nth-child(8){
+    left: 49%;
+    top: 34%;
+  }
+  &:nth-child(9){
+    left: 42%;
+    top: 23%;
+  }
+  &:nth-child(10){
+    left: 46%;
+    top: 39%;
+  }
+  &:nth-child(11){
+    left: 41%;
+    top: 11%;
+  }
+  &:nth-child(12){
+    left: 45%;
+    top: 19%;
+  }
+  &:nth-child(13){
+    left: 46%;
+    top: 24%;
+  }
+  &:nth-child(14){
+    left: 53%;
+    top: 16%;
+  }
+  &:nth-child(15){
+    left: 42%;
+    top: 18%;
   }
 }

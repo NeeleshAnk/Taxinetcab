@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, p, button {
 
 p {
   font-size: 1.3em;
-  font-weight: 300; }
+  font-weight: 500; }
 
 a, span, a:hover {
   color: inherit;
@@ -114,6 +114,9 @@ header {
       height: 100%;
       background-color: #fad048;
       transition: transform .1s;
+      -webkit-transform: scale3d(1, 0, 1);
+      -moz-transform: scale3d(1, 0, 1);
+      -ms-transform: scale3d(1, 0, 1);
       transform: scale3d(1, 0, 1); }
     #link-menu li:before {
       bottom: 0;
@@ -497,8 +500,7 @@ header {
   height: 300px;
   width: 100% !important; }
   .step-description p {
-    font-size: 1.1em !important;
-    font-weight: 500; }
+    font-size: 1.1em !important; }
 
 .step-marker {
   position: absolute;
@@ -685,8 +687,7 @@ header {
     -webkit-transform: skew(5deg) rotate(5deg);
     -moz-transform: skew(5deg) rotate(5deg);
     -ms-transform: skew(5deg) rotate(5deg);
-    transform: skew(5deg) rotate(5deg);
-    font-weight: 500; }
+    transform: skew(5deg) rotate(5deg); }
 
 .link {
   position: absolute;
@@ -716,8 +717,7 @@ header {
     font-size: 1.17em; }
   #viajar-con p {
     color: #808080;
-    margin: 10px 0 0;
-    font-weight: 500; }
+    margin: 10px 0 0; }
   #viajar-con .row h2, #viajar-con .row h3 {
     color: #b3b3b3;
     margin: 0;
@@ -784,5 +784,150 @@ header {
   font-size: 2.8em;
   display: inline-block;
   color: #fff; }
+
+.small-ribbon {
+  padding-bottom: 150px; }
+
+#country-precence .background {
+  background: #f2f2f2; }
+
+.ribbon-02 {
+  position: relative;
+  top: 35px; }
+  .ribbon-02 .part {
+    position: absolute; }
+    .ribbon-02 .part:nth-child(1) {
+      width: 110px;
+      height: 100px;
+      -webkit-transform: skew(-5deg) rotate(-5deg);
+      -moz-transform: skew(-5deg) rotate(-5deg);
+      -ms-transform: skew(-5deg) rotate(-5deg);
+      transform: skew(-5deg) rotate(-5deg);
+      background-color: #e2b63c; }
+    .ribbon-02 .part:nth-child(2) {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10.5px 55px 23px 0;
+      border-color: transparent #d3a530 transparent transparent;
+      top: 62px;
+      left: 55px; }
+    .ribbon-02 .part:nth-child(3) {
+      width: 340px;
+      height: 120px;
+      -webkit-transform: skew(-5deg) rotate(-5deg);
+      -moz-transform: skew(-5deg) rotate(-5deg);
+      -ms-transform: skew(-5deg) rotate(-5deg);
+      transform: skew(-5deg) rotate(-5deg);
+      background-color: #f2c340;
+      left: 57px;
+      top: -63px; }
+      .ribbon-02 .part:nth-child(3) h2 {
+        width: 100%;
+        font-style: italic;
+        font-size: 2em;
+        display: inline-block;
+        padding-left: 60px;
+        margin-top: 20px; }
+
+.country-name p {
+  width: 60%;
+  line-height: 30px;
+  margin: 15% auto 40px; }
+
+.rounded-button .link-btn {
+  background: transparent;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  font-size: 1.2em; }
+  .rounded-button .link-btn:after {
+    background: #fad048 !important; }
+  .rounded-button .link-btn:hover {
+    color: #fff; }
+
+@media (max-width: 768px) {
+  .country-map {
+    order: 1;
+    left: 0; }
+
+  .country-name {
+    order: 2; } }
+.country-map {
+  position: relative;
+  text-align: center;
+  left: -9%; }
+  @media (min-width: 768px) {
+    .country-map {
+      margin-top: -100px; } }
+
+#lugar {
+  cursor: pointer; }
+
+.location-info {
+  display: none;
+  background: #fff;
+  text-align: left;
+  min-width: 175px;
+  padding: 10px 15px;
+  border: 2px solid #fad048;
+  position: absolute;
+  top: -100%;
+  right: 100%;
+  z-index: 1; }
+
+.location-container {
+  display: inline-block;
+  position: absolute;
+  top: 4%;
+  left: 41%; }
+  @media (min-width: 320px) {
+    .location-container:hover .location-info {
+      display: block; } }
+  @media (max-width: 480px) {
+    .location-container:hover .location-info {
+      left: 100%; } }
+  .location-container:nth-child(2) {
+    top: 29%;
+    left: 49%; }
+  .location-container:nth-child(3) {
+    left: 46%;
+    top: 54%; }
+  .location-container:nth-child(4) {
+    left: 43%;
+    top: 52%; }
+  .location-container:nth-child(5) {
+    left: 51%;
+    top: 70%; }
+  .location-container:nth-child(6) {
+    left: 46.5%;
+    top: 70%; }
+  .location-container:nth-child(7) {
+    left: 48%;
+    top: 58%; }
+  .location-container:nth-child(8) {
+    left: 49%;
+    top: 34%; }
+  .location-container:nth-child(9) {
+    left: 42%;
+    top: 23%; }
+  .location-container:nth-child(10) {
+    left: 46%;
+    top: 39%; }
+  .location-container:nth-child(11) {
+    left: 41%;
+    top: 11%; }
+  .location-container:nth-child(12) {
+    left: 45%;
+    top: 19%; }
+  .location-container:nth-child(13) {
+    left: 46%;
+    top: 24%; }
+  .location-container:nth-child(14) {
+    left: 53%;
+    top: 16%; }
+  .location-container:nth-child(15) {
+    left: 42%;
+    top: 18%; }
 
 /*# sourceMappingURL=main.css.map */

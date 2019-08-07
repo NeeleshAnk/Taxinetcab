@@ -4,14 +4,14 @@
 body{
   padding: 0;
   margin: 0;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu", sans-serif;
 }
 html {
   scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5, p, button {
   color: $grey;
-  font-family: 'Ubuntu';
+  font-family: "Ubuntu", sans-serif;
 }
 p {
   font-size: 1.3em;
@@ -30,10 +30,12 @@ header{
   -moz-transition: all 1s;
   transition: all .1s;
 }
+
 // add class while header scroll
 .header-border-scroll{
   border-bottom: solid 3px $saffron-yellow !important;
 }
+
 // open hidden menu overlay on click menu btn
 .sidenav {
   height: 100%;
@@ -153,6 +155,7 @@ header{
     }
   }
 }
+
 // skewed-section
 .skewed-section{
   position: relative;
@@ -162,6 +165,7 @@ header{
   margin-top: 20px;
   padding: 0 15px;
 }
+
 // banner ribbon
 .ribbon-block{
   width: 100vw;
@@ -207,6 +211,7 @@ header{
   height: 100px;
   @include relative(top -110px left 68%);
 }
+
 // mobile image on banner
 .mobile-image {
   @include absolute(left 17% z-index 1);
@@ -217,6 +222,7 @@ header{
     font-weight: bold;
   }
 }
+
 // app downloading button on banner
 .app_btn{
   @include absolute(right 30% bottom 5%);
@@ -292,6 +298,7 @@ header{
     bottom: -100px;
   }
 };
+
 // banner background
 .background{
   @include absolute(top -118px left 0 z-index -1);
@@ -300,10 +307,12 @@ header{
   width: 100%;
   height: 142%;
 }
+
 // section-padding
 .section-padding {
   padding: 80px 0px;
 }
+
 // circular-icons
 #circular-icons{
   padding-left: 15px;
@@ -336,6 +345,7 @@ header{
     @include flex-direction(column);
   }
 }
+
 // shadow below circular icons
 .shadow{
   width: 40px;
@@ -346,6 +356,7 @@ header{
   @include absolute(left 50%);
   margin-left: -20px;
 }
+
 // bottom-text below circular icons
 .text{
   width: 100px;
@@ -381,6 +392,7 @@ header{
     font-size: 2.4em;
   }
 }
+
 // circular-steps-container box
 .holder{
   display: flex;
@@ -407,6 +419,7 @@ header{
     font-weight: 600;
   }
 }
+
 // circular-step step-description
 .step-description{
   margin-top: 20px !important;
@@ -417,6 +430,7 @@ header{
     font-size: 1.1em !important;
   }
 }
+
 // step-count
 .step-marker{
   @include absolute(top 5px left 0);
@@ -443,6 +457,7 @@ header{
   background-size: 19px 3px;
   background-repeat: repeat-x;
 }
+
 // site quote-dialog
 #quote-dialog{
   position: relative;
@@ -625,7 +640,7 @@ header{
     color: $Dark-gray;
     margin: 10px 0 0;
   }
-  .row h2, .row h3 {
+  .text-block h2, .text-block h3 {
     color: $light-grey;
     margin: 0;
     font-weight: 400;
@@ -691,6 +706,7 @@ header{
     }
   }
 }
+
 // stars below the image
 .stars{
   span{
@@ -747,6 +763,7 @@ header{
     }
   }
 }
+
 // country name block
 .country-name{
   p{
@@ -779,6 +796,7 @@ header{
     order: 2;
   }
 }
+
 // map image
 .country-map{
   position: relative;
@@ -791,6 +809,7 @@ header{
 #lugar{
   cursor: pointer;
 }
+
 // location info while hover on the marker
 .location-info {
   display: none;
@@ -801,6 +820,7 @@ header{
   @include border(2px, solid, $yellow-color);
   @include absolute(top -100% right 100% z-index 1);
 }
+
 // location marker on the map image
 .location-container{
   display: inline-block;
@@ -872,5 +892,107 @@ header{
   &:nth-child(15){
     left: 42%;
     top: 18%;
+  }
+}
+
+//contact information for any query
+#contact{
+  margin-top: 4em;
+  position: relative;
+  .rounded-button{
+    overflow: hidden;
+    a{
+      max-width: 70px;
+      font-size: .8em;
+      padding: 5px 10px;
+      line-height: 1.1;
+      margin-top: 10px;
+    }
+  }
+}
+
+// input form
+#form-contacto{
+  width: 370px;
+  margin: auto;
+  textarea{
+    max-width: 326px;
+  }
+}
+.input {
+  position: relative;
+  margin: 1em;
+  overflow: hidden;
+}
+
+.input__field {
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 1em;
+  padding: 0.85em 0.15em;
+  width: 100%;
+  background: transparent;
+  color: $grey;
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+// detail label on input
+.input__label {
+  color: $grey;
+  font-size: 80%;
+  @include absolute(bottom 0 left 0);
+  padding: 0 0.25em;
+  width: 100%;
+  height: calc(100% - 1em);
+  pointer-events: none;
+}
+
+.input__label-content {
+  padding: 1em 0;
+  width: 100%;
+  position: absolute;
+}
+
+.input__label::before,
+.input__label::after {
+  content: '';
+  @include absolute(top 0 left 0);
+  width: 100%;
+  height: calc(100% - 10px);
+  border-bottom: 1px solid $yellow-color;
+}
+
+.input__label::after {
+  margin-top: 2px;
+  @include border-dir(bottom, 4px, solid, $yellow-color);
+  @include transform(translate3d(-100%, 0, 0));
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input__field:focus + .input__label::after{
+  @include transform(translate3d(0, 0, 0));
+}
+
+// animation while focus on input
+.input__field:focus + .input__label .input__label-content{
+  @include animation(anim-1, 0s, 0.3s);
+}
+@include keyframes(anim-1){
+  50% {
+    opacity: 0;
+    @include transform(translate3d(1em, 0, 0));
+  }
+  51% {
+    opacity: 0;
+    @include transform(translate3d(-1em, -40%, 0));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translate3d(0, -40%, 0));
   }
 }

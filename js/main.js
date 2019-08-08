@@ -30,3 +30,32 @@ function show() {
   show.style.opacity = 1;
   show.style.display = "block";
 }
+
+
+var animateHTML = function() {
+  var elems;
+  var windowHeight;
+  function init() {
+    elems = document.querySelectorAll('.skewed-section');
+    windowHeight = window.innerHeight;
+    addEventHandlers();
+    checkPosition();
+  }
+
+  function addEventHandlers() {
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', init);
+  }
+  function checkPosition() {
+    for (var i = 0; i < elems.length; i++) {
+      var positionFromTop = elems[i].getBoundingClientRect().top + 200;
+      if (positionFromTop - windowHeight <= 0) {
+        elems[i].classList.add('showme');
+      }
+    }
+  }
+  return {
+    init: init
+  };
+};
+animateHTML().init();

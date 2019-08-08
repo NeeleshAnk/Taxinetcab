@@ -160,6 +160,8 @@ header{
 .skewed-section{
   position: relative;
   margin: 100px 0px 35px 0px;
+  opacity: 0;
+  left: -100%;
 }
 #content_wrapper {
   margin-top: 20px;
@@ -1137,4 +1139,18 @@ header{
   color: $Dark-gray;
   padding: 5px 15px;
   text-align: right;
+}
+
+.showme{
+  @include animation(showme, 0, 1s);
+}
+@include keyframes(showme){
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
 }

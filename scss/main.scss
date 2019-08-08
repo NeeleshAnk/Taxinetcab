@@ -168,56 +168,69 @@ header{
 
 // banner ribbon
 .ribbon-block{
-  width: 100vw;
-  height: 650px;
+  @media (max-width: 1200px){
+    display: none;
+  }
 }
 .ribbon{
   background: $yellow-color;
-  @include transform(rotate(-12deg));
+  content: "";
+  @include transform(rotate(-12deg) skew(-12deg));
 }
 .ribbon_one{
-  width: 400px;
+  width: 33%;
   height: 160px;
-  @include relative(top 10.5% left 46.6%);
-  z-index: 1;
+  @include absolute(top 7.1% left 43.5% z-index 0);
   p{
     @include fontSize(45);
-    @include absolute(top 29% left 13%);
+    @include relative(top 29% left 13% z-index 3);
     font-weight: normal;
     color: $light_black;
     font-style: italic;
   }
 }
 .ribbon_two{
-  width: 65%;
-  @include relative(top -5% left -50px);
+  width: 60%;
   height: 100px;
+  @include absolute(top 14% left -10px z-index -1);
 }
 .ribbon_three{
-  @include absolute(left 39.8% top 10.5%);
-  border-left: 69px solid $yellow-color;
-  border-right: 198px solid $golden_yellow;
-  border-top: 30px solid $yellow-color;
+  @include absolute(top 7% left 38.1% z-index -1);
+  border-left: 69px solid #fad048;
+  border-right: 198px solid #e0ae32;
+  border-top: 30px solid #fad048;
 }
 .ribbon_four{
-  @include absolute(left 67.8% top 30.5% z-index 1);
-  border-top: 52px solid $golden_yellow;
-  border-right: 93px solid $yellow-color;
-  border-left: 52px solid $golden_yellow;
-  border-bottom: 30px solid $yellow-color;
+  @include absolute(top 25.2% left 65% z-index 0);
+  border-top: 52px solid #e0ae32;
+  border-right: 93px solid #fad048;
+  border-left: 52px solid #e0ae32;
+  border-bottom: 30px solid #fad048;
 }
 .ribbon_five{
-  width: 423px;
+  width: 33%;
+  @include absolute(top 16.5% left 71% z-index -1);
   height: 100px;
-  @include relative(top -110px left 68%);
 }
 
 // mobile image on banner
 .mobile-image {
-  @include absolute(left 17% z-index 1);
+  z-index: 1;
+  @media (max-width: 768px){
+    img{
+      @include transform(scale(.8));
+    }
+  }
 }
 .intro-text {
-  @include absolute(right 29% bottom 13%);
+  @include align(true, true);
+  z-index: 2;
+  @media (min-width: 769px){
+    transform: translate(-50%, 8%);
+  }
+  @media (max-width: 768px){
+    text-align: center;
+  }
   p{
     font-weight: bold;
   }
@@ -225,7 +238,7 @@ header{
 
 // app downloading button on banner
 .app_btn{
-  @include absolute(right 30% bottom 5%);
+  margin-top: 10px;
   a:nth-child(1){
     &:before{
       content: '\f179';
@@ -280,7 +293,8 @@ header{
 
 // scroll down moving angle on banner bottom
 .down-angle{
-  @include absolute(bottom -100px left 50%);
+  text-align: center;
+  position: relative;
   color: $saffron-yellow;
   cursor: pointer;
   @include fontSize(60);
@@ -380,6 +394,9 @@ header{
   text-align: center;
   position: relative;
   width: 100%;
+  .col-half-offset{
+    margin-right: 4.166666667%
+  }
 }
 .step-circular-header{
   margin-bottom: 30px;
@@ -390,22 +407,20 @@ header{
   h2{
     margin: 10px 0 35px;
     font-size: 2.4em;
+    @media (max-width: 768px){
+      margin-bottom: 60px;
+    }
   }
-}
-
-// circular-steps-container box
-.holder{
-  display: flex;
 }
 .step-container{
   position: relative;
-  margin: 80px 70px 0;
-  &:nth-child(1){
-    margin-left: 45px;
-  }
 }
 .step{
+  margin: auto;
+  text-align: center;
   position: relative;
+  background: $white;
+  z-index: 1;
   @include flex($display:flex, $justify-content:center);
   @include flex-direction(column);
   width: 130px;
@@ -424,6 +439,7 @@ header{
 .step-description{
   margin-top: 20px !important;
   max-width: 130px;
+  margin: auto;
   height: 300px;
   width: 100% !important;
   p{
@@ -452,10 +468,13 @@ header{
   width: 100%;
   height: 4px;
   margin-top: -2px;
-  @include absolute(top 15% left 106%);
+  @include absolute(top 15% left 47%);
   @include linear-gradient((90deg, #d3d3d3 40%, rgba(255,255,255,0) 0%));
   background-size: 19px 3px;
   background-repeat: repeat-x;
+  @media (max-width: 768px){
+    display: none;
+  }
 }
 
 // site quote-dialog
@@ -487,26 +506,32 @@ header{
   position: relative;
   margin: 10% 0;
   width: 100%;
+  @media (max-width: 768px){
+    padding-bottom: 100px;
+  }
   text-align: center;
   &:before, &:after{
     content: '';
     width: 50%;
     height: 4px;
     position: absolute;
-    background-image: linear-gradient(90deg, #fad048 21%, rgba(255,255,255,0) 0%);
+    background-image: linear-gradient(90deg, $yellow-color 21%, rgba(255,255,255,0) 0%);
     background-size: 50px 4px;
     background-repeat: repeat-x;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     transition: all 1s;
     @include transform(rotate(-5deg));
+    @media (max-width: 768px){
+      display: none;
+    }
   }
   &:before{
-    top: 30%;
+    top: 75px;
     right: 0;
   }
   &:after{
-    top: 18%;
+    top: 50px;
     left: 0;
   }
   i{
@@ -525,6 +550,9 @@ header{
     background: $white;
     @include transform(skewY(-5deg));
     font-style: italic;
+    @media (max-width: 480px){
+      @include fontSize(30);
+    }
   }
   .link-btn{
     width: 200px;
@@ -544,8 +572,10 @@ header{
   .app_btn{
     bottom: -30%;
     right: 38%;
+    margin-top: 25px;
     transition: .8s;
     @include opacity(0);
+    display: none;
     .link-btn{
       display: inline-block;
       padding: 8px;
@@ -580,6 +610,9 @@ header{
   display: inline-block;
   width: 480px;
   text-align: left;
+  @media (max-width: 480px){
+    width: 300px;
+  }
   h2{
     @include relative(z-index 1);
     margin: 0;
@@ -630,7 +663,7 @@ header{
     text-align: right;
     padding-right: 15px;
     font-weight: 400;
-    margin: 20px auto;
+    margin: 20px auto 40px;
     position: relative;
   }
   h3{
@@ -711,6 +744,9 @@ header{
 .stars{
   span{
     font-size: 2.8em;
+    @media (max-width: 480px){
+      font-size: 2.3em;
+    }
     display: inline-block;
     color: $white;
   }
@@ -723,6 +759,9 @@ header{
 #country-precence{
   .background{
     background: $very-light-gray;
+    @media (max-width: 768px) {
+      height: 125%;
+    }
   }
 }
 .ribbon-02{
@@ -759,6 +798,9 @@ header{
         display: inline-block;
         padding-left: 60px;
         margin-top: 20px;
+        @media (max-width: 768px) {
+          padding-left: 30px;
+        }
       }
     }
   }
@@ -802,8 +844,11 @@ header{
   position: relative;
   text-align: center;
   left: -9%;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     margin-top: -100px;
+  }
+  @media (max-width: 768px){
+    left: 0;
   }
 }
 #lugar{
@@ -913,7 +958,7 @@ header{
 
 // input form
 #form-contacto{
-  width: 370px;
+  max-width: 370px;
   margin: auto;
   textarea{
     max-width: 326px;
@@ -995,4 +1040,101 @@ header{
     opacity: 1;
     @include transform(translate3d(0, -40%, 0));
   }
+}
+
+// footer
+#main_footer_wrapper {
+  background-color: $very-dark-gray;
+  margin-top: 40px;
+  text-align: center;
+}
+.right-side{
+  position: relative;
+  .highlight{
+    color: $yellow-color;
+  }
+  .bar{
+    @include absolute(top 0 bottom 0 right 0);
+    width: 2px;
+    background-color: $Dark-gray;
+  }
+}
+// social icons in the footer
+.redes-sociales{
+  li{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid $yellow-color;
+    a{
+      color: $extra-dark-gray;
+    }
+  }
+}
+// ribbon in the footer
+.ribbon-03 {
+  position: relative;
+  top: -20px;
+  .part:nth-child(1) {
+    width: 40%;
+    height: 20px;
+    background-color: $yellow-color;
+  }
+  .part:nth-child(2) {
+    width: 0;
+    height: 0;
+    @include absolute(z-index 1 top 20px left 40%);
+    border-style: solid;
+    border-width: 20px 25px 0 0;
+    border-color: $golden_yellow transparent transparent transparent;
+    margin-left: -25px;
+  }
+  .part:nth-child(3) {
+    width: 60%;
+    height: 20px;
+    box-sizing: content-box;
+    padding-left: 25px;
+    background-color: $yellow-color;
+    float: right;
+  }
+}
+// link menu in the footer
+.footer-menu{
+  letter-spacing: -5px;
+  li{
+    display: inline-block;
+    width: 33%;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+    line-height: 20px;
+    padding-left: 30px;
+    position: relative;
+    color: $extra-dark-gray;
+    &:before{
+      content: '';
+      line-height: 20px;
+      @include absolute(top 3px left 20px);
+      height: 15px;
+      width: 1px;
+      background-color: $yellow-color;
+    }
+  }
+}
+.rights{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: right;
+  color: $Dark-gray;
+  a{
+    color: $saffron-yellow;
+  }
+}
+// bottom line of the page
+.made-by{
+  background-color: $black;
+  color: $Dark-gray;
+  padding: 5px 15px;
+  text-align: right;
 }

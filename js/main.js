@@ -28,4 +28,5 @@ function scrollwin() {
 function show() {
   var show = document.getElementById('link-btn');
   show.style.opacity = 1;
+  show.style.display = "block";
 }
